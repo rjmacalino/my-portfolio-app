@@ -1,33 +1,33 @@
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
-      <div className="text-center px-4">
-        <p className="text-blue-400 text-sm mb-2">Hi, I&apos;m</p>
-        <h1 className="text-4xl md:text-6xl font-bold mb-4">
+    <section id="hero" aria-label="Introduction" className="min-h-screen flex items-center justify-center text-center px-6 pt-24 pb-12">
+      <div className="max-w-[720px]">
+        <p className="font-mono uppercase tracking-[0.35em] text-[0.8rem] text-muted mb-3">
+          Hi, I&apos;m
+        </p>
+
+        <h1 className="text-[clamp(2.6rem,8vw,5rem)] font-black leading-[1.05] tracking-[-0.02em] mb-3">
           Raymond Macalino
         </h1>
-        <p className="text-xl md:text-2xl text-gray-400 mb-4">
+
+        <p className="text-[clamp(1.1rem,3vw,1.5rem)] font-bold mb-4">
           Web &amp; Game Developer
         </p>
-        <p className="text-gray-300 mb-8 max-w-md mx-auto">
+
+        <p className="text-[clamp(0.95rem,2.2vw,1.15rem)] text-muted max-w-[480px] mx-auto mb-9">
           I build things for the web, and sometimes for virtual worlds.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="#projects"
-            className="bg-blue-500 hover:bg-blue-600 transition-colors px-6 py-3 rounded"
-          >
+
+        <div className="flex flex-wrap gap-4 justify-center">
+          <a href="#projects" className="inline-block px-[1.9rem] py-3 rounded-[2rem] text-[0.95rem] font-bold bg-invert-bg text-invert-text transition-all duration-150 hover:-translate-y-0.5 hover:opacity-85">
             View My Work
           </a>
 
-          <a
-            href="#contact"
-            className="border border-gray-600 hover:border-gray-400 transition-colors px-6 py-3 rounded"
-          >
+          <a href="#contact" className="inline-block px-[1.9rem] py-3 rounded-[2rem] text-[0.95rem] font-bold border-[1.5px] border-border-base transition-all duration-150 hover:-translate-y-0.5 hover:border-border-hover">
             Get In Touch
           </a>
         </div>
       </div>
-    </main>
+    </section>
   );
 }
