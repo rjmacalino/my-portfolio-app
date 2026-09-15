@@ -5,9 +5,9 @@ import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
-  title: "Raymond Macalino | Web & Game Developer",
+  title: "RJ Macalino | Full Stack Developer",
   description:
-    "Web & Game Developer based in Melbourne. I build things for the web, and sometimes for virtual worlds.",
+    "Full Stack Developer based in Melbourne. I build things for the web, from idea to deployment.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

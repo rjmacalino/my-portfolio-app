@@ -1,25 +1,15 @@
 const skillGroups = [
   {
     title: "Frontend",
-    skills: [
-      "HTML5 & CSS3",
-      "JavaScript (ES6+)",
-      "TypeScript",
-      "React.js",
-      "Next.js",
-      "Redux",
-      "Tailwind CSS",
-      "SCSS",
-      "Material-UI",
-    ],
+    skills: ["HTML5 & CSS3", "JavaScript (ES6+)", "TypeScript", "React", "Next.js", "Tailwind CSS"],
   },
   {
     title: "Backend",
-    skills: ["Node.js", "Express", "MongoDB", "SQL Server", "REST APIs", "JWT Auth"],
+    skills: ["Node.js", "REST APIs"],
   },
   {
-    title: "Other",
-    skills: ["Lua Scripting", "Git & GitHub", "Shopify", "WordPress", "Netlify", "Responsive Design"],
+    title: "Tools & Other",
+    skills: ["Git & GitHub", "Shopify", "WordPress", "Netlify", "Vercel", "Responsive Design"],
   },
 ];
 
