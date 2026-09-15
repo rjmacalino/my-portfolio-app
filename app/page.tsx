@@ -17,15 +17,15 @@ export default function Home() {
           </p>
 
           <h1 className="text-[clamp(2.6rem,8vw,5rem)] font-black leading-[1.05] tracking-[-0.02em] mb-3">
-            Raymond Macalino
+            RJ Macalino
           </h1>
 
           <p className="text-[clamp(1.1rem,3vw,1.5rem)] font-bold mb-4">
-            Web &amp; Game Developer
+            Full Stack Developer
           </p>
 
           <p className="text-[clamp(0.95rem,2.2vw,1.15rem)] text-muted max-w-[480px] mx-auto mb-9">
-            I build things for the web, and sometimes for virtual worlds.
+            I build things for the web, from idea to deployment.
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center">

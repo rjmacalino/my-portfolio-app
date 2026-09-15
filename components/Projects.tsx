@@ -1,10 +1,10 @@
 type Project = {
   title: string;
-  status: "Live" | "Ongoing";
+  status: "Live";
   description: string;
   tags: string[];
-  demoUrl?: string;
-  codeUrl?: string;
+  demoUrl: string;
+  codeUrl: string;
 };
 
 const projects: Project[] = [
@@ -16,13 +16,6 @@ const projects: Project[] = [
     tags: ["React", "TypeScript", "Vite", "Service Worker", "LocalStorage"],
     demoUrl: "https://pomodoro-flow.example.com",
     codeUrl: "https://github.com/rjmacalino/pomodoro-v2",
-  },
-  {
-    title: "Lua Game Scripting Suite",
-    status: "Ongoing",
-    description:
-      "A growing collection of custom Lua scripts for a popular online multiplayer game. Serving 200+ active users with regular updates, game logic systems, player progression, and automated server tools.",
-    tags: ["Lua", "Source Engine", "Game Modding", "Server-side Scripting"],
   },
   {
     title: "Precious Koala",
@@ -52,7 +45,7 @@ export default function Projects() {
           Projects
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
           {projects.map((project) => (
             <article
               key={project.title}
@@ -60,13 +53,7 @@ export default function Projects() {
               className="bg-surface border border-border-base rounded-[1.25rem] p-[1.85rem] flex flex-col gap-3 transition-[border-color] duration-300 hover:border-border-hover"
             >
               <div className="flex items-center justify-between">
-                <span
-                  className={`font-mono text-[0.68rem] font-bold uppercase tracking-[0.08em] px-[0.7rem] py-[0.22rem] rounded-[2rem] border ${
-                    project.status === "Live"
-                      ? "bg-invert-bg text-invert-text border-invert-bg"
-                      : "text-text border-dashed border-border-hover"
-                  }`}
-                >
+                <span className="font-mono text-[0.68rem] font-bold uppercase tracking-[0.08em] px-[0.7rem] py-[0.22rem] rounded-[2rem] border bg-invert-bg text-invert-text border-invert-bg">
                   {project.status}
                 </span>
               </div>
@@ -91,34 +78,25 @@ export default function Projects() {
                 ))}
               </ul>
 
-              {project.demoUrl && project.codeUrl ? (
-                <div className="flex gap-[0.6rem] flex-wrap mt-1">
-                  <a
-                    href={project.demoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-[1.3rem] py-2 text-[0.85rem] bg-invert-bg text-invert-text rounded-[2rem] font-bold transition-[transform,opacity] duration-150 hover:-translate-y-0.5 hover:opacity-85"
-                  >
-                    Live Demo
-                  </a>
-
-                  <a
-                    href={project.codeUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-[1.3rem] py-2 text-[0.85rem] border-[1.5px] border-border-base text-muted rounded-[2rem] font-bold transition-[color,border-color,transform] duration-150 hover:text-text hover:border-border-hover hover:-translate-y-0.5"
-                  >
-                    Code
-                  </a>
-                </div>
-              ) : (
-                <span
-                  aria-disabled="true"
-                  className="self-start mt-1 px-[1.3rem] py-2 text-[0.85rem] bg-invert-bg text-invert-text rounded-[2rem] font-bold opacity-40 cursor-not-allowed"
+              <div className="flex gap-[0.6rem] flex-wrap mt-1">
+                <a
+                  href={project.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-[1.3rem] py-2 text-[0.85rem] bg-invert-bg text-invert-text rounded-[2rem] font-bold transition-[transform,opacity] duration-150 hover:-translate-y-0.5 hover:opacity-85"
                 >
-                  Personal Project
-                </span>
-              )}
+                  Live Demo
+                </a>
+
+                <a
+                  href={project.codeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-[1.3rem] py-2 text-[0.85rem] border-[1.5px] border-border-base text-muted rounded-[2rem] font-bold transition-[color,border-color,transform] duration-150 hover:text-text hover:border-border-hover hover:-translate-y-0.5"
+                >
+                  Code
+                </a>
+              </div>
             </article>
           ))}
         </div>

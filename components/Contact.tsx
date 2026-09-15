@@ -13,7 +13,6 @@ export default function Contact() {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
-      // clipboard blocked — fall back to showing the email itself
       setCopied(false);
     }
   };
@@ -26,8 +25,8 @@ export default function Contact() {
         </h2>
 
         <p className="text-muted text-[1.05rem] max-w-[480px] mx-auto mb-8">
-          I&apos;m open to junior developer roles and interesting
-          collaborations. Drop me a line, I usually reply within a day.
+          Always happy to connect, talk shop, or hear about interesting
+          projects. Drop me a line, I usually reply within a day.
         </p>
 
         <div className="flex gap-4 justify-center flex-wrap mb-8">
@@ -62,17 +61,6 @@ export default function Contact() {
               className="text-muted text-[0.9rem] font-semibold border-b border-transparent pb-0.5 transition-colors hover:text-text hover:border-text"
             >
               GitHub
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://rjmacalino.netlify.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Live portfolio"
-              className="text-muted text-[0.9rem] font-semibold border-b border-transparent pb-0.5 transition-colors hover:text-text hover:border-text"
-            >
-              Live Portfolio
             </a>
           </li>
         </ul>
