@@ -14,6 +14,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     const hero = document.getElementById("hero");
@@ -48,6 +49,12 @@ export default function Navbar() {
     sections.forEach((section) => sectionObserver.observe(section));
 
     return () => sectionObserver.disconnect();
+  }, []);
+
+ 
+
+  useEffect(() => {
+    setMounted(true);
   }, []);
 
   return (
@@ -93,10 +100,14 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+            aria-label={
+              mounted
+                ? `Switch to ${theme === "dark" ? "light" : "dark"} theme`
+                : "Toggle theme"
+            }
             className="font-mono text-[0.72rem] tracking-[0.08em] text-muted border border-border-base px-[0.65rem] py-[0.3rem] cursor-pointer transition-colors hover:text-text hover:border-border-hover w-[52px] flex items-center justify-center"
           >
-            {theme === "dark" ? "DARK" : "LIGHT"}
+            {mounted ? (theme === "dark" ? "DARK" : "LIGHT") : "DARK"}
           </button>
         </li>
       </ul>
