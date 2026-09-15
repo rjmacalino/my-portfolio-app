@@ -1,26 +1,60 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-mono-stack: ui-monospace, "SF Mono", "Cascadia Code", Consolas, monospace;
+  --font-sans-stack: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+:root,
+:root[data-theme="dark"] {
+  --bg: #0a0a0a;
+  --bg-2: #111111;
+  --surface: #161616;
+  --text: #f5f5f5;
+  --muted: #8a8a8a;
+  --border-base: #2a2a2a;
+  --border-hover: #555555;
+  --invert-bg: #ffffff;
+  --invert-text: #0a0a0a;
+}
+
+:root[data-theme="light"] {
+  --bg: #ffffff;
+  --bg-2: #fafafa;
+  --surface: #f4f4f4;
+  --text: #111111;
+  --muted: #6b6b6b;
+  --border-base: #e2e2e2;
+  --border-hover: #b0b0b0;
+  --invert-bg: #0a0a0a;
+  --invert-text: #ffffff;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-bg-2: var(--bg-2);
+  --color-surface: var(--surface);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-border-base: var(--border-base);
+  --color-border-hover: var(--border-hover);
+  --color-invert-bg: var(--invert-bg);
+  --color-invert-text: var(--invert-text);
+
+  --font-sans: var(--font-sans-stack);
+  --font-mono: var(--font-mono-stack);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans-stack);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.2s, color 0.2s;
 }
