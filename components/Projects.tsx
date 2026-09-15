@@ -14,7 +14,7 @@ const projects: Project[] = [
     description:
       "A focus timer with a circular SVG progress ring, three switchable themes, persistent timer across sessions, and background notifications via Service Worker. Built with Vite, React, and TypeScript.",
     tags: ["React", "TypeScript", "Vite", "Service Worker", "LocalStorage"],
-    demoUrl: "https://pomodoro-flow.example.com",
+    demoUrl: "https://pomodoro-flow-app.netlify.app",
     codeUrl: "https://github.com/rjmacalino/pomodoro-v2",
   },
   {
