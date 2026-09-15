@@ -1,5 +1,8 @@
+import About from "@/components/About";
+
 export default function Home() {
   return (
+    <>
     <section id="hero" aria-label="Introduction" className="min-h-screen flex items-center justify-center text-center px-6 pt-24 pb-12">
       <div className="max-w-[720px]">
         <p className="font-mono uppercase tracking-[0.35em] text-[0.8rem] text-muted mb-3">
@@ -29,5 +32,7 @@ export default function Home() {
         </div>
       </div>
     </section>
+    <About />
+    </>
   );
 }
