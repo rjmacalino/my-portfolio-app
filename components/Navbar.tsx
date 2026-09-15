@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -12,6 +13,7 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const hero = document.getElementById("hero");
@@ -90,10 +92,11 @@ export default function Navbar() {
         <li>
           <button
             type="button"
-            aria-label="Switch to light theme"
-            className="font-mono text-[0.72rem] tracking-[0.08em] text-muted border border-border-base px-[0.65rem] py-[0.3rem] cursor-pointer transition-colors hover:text-text hover:border-border-hover"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+            className="font-mono text-[0.72rem] tracking-[0.08em] text-muted border border-border-base px-[0.65rem] py-[0.3rem] cursor-pointer transition-colors hover:text-text hover:border-border-hover w-[52px] flex items-center justify-center"
           >
-            DARK
+            {theme === "dark" ? "DARK" : "LIGHT"}
           </button>
         </li>
       </ul>
