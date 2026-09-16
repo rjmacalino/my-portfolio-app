@@ -18,6 +18,14 @@ const roles: Role[] = [
     tags: ["React", "Next.js", "TypeScript"],
   },
   {
+    role: "Independent Developer",
+    company: "Personal Project",
+    period: "2023 – 2026",
+    summary:
+      "Built and maintained tooling for an online platform used by a community of around 200 active users, shipping regular updates and performance improvements.",
+    tags: ["Tooling", "Performance"],
+  },
+  {
     role: "Web Developer",
     company: "Qualitransit Health Distribution",
     period: "2020 – 2022",
