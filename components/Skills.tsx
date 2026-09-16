@@ -19,12 +19,15 @@ const skillGroups = [
     skills: ["Node.js", "Express", "MongoDB", "MySQL", "REST APIs"],
   },
   {
-    title: "E-commerce & CMS",
-    skills: ["Shopify", "WordPress", "Stripe"],
-  },
-  {
-    title: "Tools",
-    skills: ["Git & GitHub", "Netlify", "Vercel", "Responsive Design"],
+    title: "Tools & Platforms",
+    skills: [
+      "Shopify",
+      "WordPress",
+      "Stripe",
+      "Git & GitHub",
+      "Netlify",
+      "Vercel",
+    ],
   },
 ];
 
@@ -33,26 +36,23 @@ export default function Skills() {
     <section
       id="stack"
       aria-labelledby="stack-heading"
-      className="flex flex-col gap-5"
+      className="flex flex-col gap-4"
     >
       <SectionHeading id="stack">Stack</SectionHeading>
 
-      <dl className="flex flex-col gap-4">
+      <dl className="flex flex-col gap-3">
         {skillGroups.map((group) => (
-          <div
-            key={group.title}
-            className="grid grid-cols-1 gap-2 sm:grid-cols-[130px_1fr] sm:gap-4"
-          >
-            <dt className="pt-[0.2rem] font-mono text-[0.7rem] font-bold uppercase tracking-[0.12em] text-muted">
+          <div key={group.title} className="flex flex-col gap-1.5">
+            <dt className="font-mono text-[0.66rem] font-bold uppercase tracking-[0.14em] text-muted">
               {group.title}
             </dt>
 
             <dd>
-              <ul className="flex flex-wrap gap-[0.35rem]">
+              <ul className="flex flex-wrap gap-[0.3rem]">
                 {group.skills.map((skill) => (
                   <li
                     key={skill}
-                    className="rounded-[2rem] border border-border-base bg-bg-2 px-[0.65rem] py-[0.18rem] font-mono text-[0.72rem] text-text transition-colors duration-200 hover:border-border-hover hover:bg-surface"
+                    className="rounded-[2rem] border border-border-base bg-bg-2 px-[0.55rem] py-[0.12rem] font-mono text-[0.7rem] text-text transition-colors duration-200 hover:border-border-hover hover:bg-surface"
                   >
                     {skill}
                   </li>
