@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
@@ -18,6 +19,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           defaultTheme="dark"
           enableSystem={false}
         >
+          <Navbar />
           <div className="flex-1">{children}</div>
           <Footer />
         </ThemeProvider>

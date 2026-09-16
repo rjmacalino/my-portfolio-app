@@ -50,6 +50,13 @@ html {
   scroll-padding-top: 2rem;
 }
 
+/* Clear the fixed navbar when jumping to a section. */
+@media (min-width: 1024px) {
+  html {
+    scroll-padding-top: 5rem;
+  }
+}
+
 body {
   background: var(--bg);
   color: var(--text);
