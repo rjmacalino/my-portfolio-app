@@ -11,12 +11,13 @@ const facts = ["Melbourne, AU", "2+ yrs", "MERN"];
 const subscribeNoop = () => () => {};
 
 const navLinks = [
+  { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
   { id: "skills", label: "Skills" },
 ];
 
 export default function Sidebar() {
-  const [activeSection, setActiveSection] = useState("projects");
+  const [activeSection, setActiveSection] = useState("experience");
   const [copied, setCopied] = useState(false);
   const { theme, setTheme } = useTheme();
 
