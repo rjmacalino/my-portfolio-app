@@ -66,3 +66,16 @@ body {
   -webkit-font-smoothing: antialiased;
   transition: background 0.2s, color 0.2s;
 }
+
+/*
+ * Pin the resume sidebar beside the scrolling column, but only when the
+ * viewport is tall enough to show all of it. On shorter screens it falls back
+ * to flowing with the page rather than growing its own scrollbar.
+ */
+@media (min-width: 1024px) and (min-height: 780px) {
+  .sidebar-pinned {
+    position: sticky;
+    top: 3.5rem;
+    max-height: calc(100vh - 6.5rem);
+  }
+}

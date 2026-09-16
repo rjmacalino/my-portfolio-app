@@ -6,7 +6,6 @@ import ThemeToggle from "./ThemeToggle";
 const navLinks = [
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
-  { id: "stack", label: "Stack" },
 ];
 
 export default function Navbar() {
