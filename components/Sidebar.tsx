@@ -13,7 +13,7 @@ const subscribeNoop = () => () => {};
 const navLinks = [
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
-  { id: "skills", label: "Skills" },
+  { id: "stack", label: "Stack" },
 ];
 
 export default function Sidebar() {
