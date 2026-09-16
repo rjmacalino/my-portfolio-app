@@ -1,4 +1,5 @@
 import Sidebar from "@/components/Sidebar";
+import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 
@@ -10,6 +11,7 @@ export default function Home() {
       </div>
 
       <main className="flex flex-col gap-14 pb-16 lg:w-[58%] lg:py-20">
+        <Experience />
         <Projects />
         <Skills />
       </main>
