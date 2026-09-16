@@ -2,11 +2,8 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="text-center py-10 px-6 text-muted text-[0.85rem] border-t border-border-base">
-      <p>
-        Built by RJ Macalino &middot; {year} &middot; Next.js, React &amp;
-        TypeScript
-      </p>
+    <footer className="border-t border-border-base px-6 py-6 text-center font-mono text-[0.72rem] uppercase tracking-[0.12em] text-muted">
+      <p>RJ Macalino &middot; {year} &middot; Next.js, React &amp; TypeScript</p>
     </footer>
   );
 }
