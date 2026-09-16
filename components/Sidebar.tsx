@@ -4,7 +4,7 @@ import { useState } from "react";
 import Skills from "./Skills";
 import ThemeToggle from "./ThemeToggle";
 
-const EMAIL = "rjhaymacalino@gmail.com";
+const EMAIL = "rjmacalino@outlook.com";
 const GITHUB_URL = "https://github.com/rjmacalino";
 
 const facts = ["Melbourne, AU", "2+ yrs", "MERN"];
