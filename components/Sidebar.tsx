@@ -7,7 +7,7 @@ import ThemeToggle from "./ThemeToggle";
 const EMAIL = "rjmacalino@outlook.com";
 const GITHUB_URL = "https://github.com/rjmacalino";
 
-const facts = ["Melbourne, AU", "2+ yrs", "MERN"];
+const facts = ["Melbourne, AU", "MERN"];
 
 export default function Sidebar() {
   const [copied, setCopied] = useState(false);
