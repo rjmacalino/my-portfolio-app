@@ -1,6 +1,7 @@
+import SectionHeading from "./SectionHeading";
+
 type Project = {
   title: string;
-  status: "Live";
   description: string;
   tags: string[];
   demoUrl: string;
@@ -9,28 +10,25 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: "Pomodoro Flow",
-    status: "Live",
-    description:
-      "A focus timer with a circular SVG progress ring, three switchable themes, persistent timer across sessions, and background notifications via Service Worker. Built with Vite, React, and TypeScript.",
-    tags: ["React", "TypeScript", "Vite", "Service Worker", "LocalStorage"],
-    demoUrl: "https://pomodoro-flow-app.netlify.app",
-    codeUrl: "https://github.com/rjmacalino/pomodoro-v2",
-  },
-  {
     title: "Precious Koala",
-    status: "Live",
     description:
-      "A full-stack e-commerce storefront for a Melbourne baby-products brand. Migrated from vanilla JS to Next.js 15, React 19, TypeScript and Tailwind CSS, with a localStorage cart, Stripe Checkout integration, and a Vercel deployment.",
+      "Full-stack e-commerce storefront for a Melbourne baby-products brand. Migrated from vanilla JS to Next.js and React 19 with a localStorage cart and Stripe Checkout.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "Vercel"],
     demoUrl: "https://precious-koala.vercel.app/",
     codeUrl: "https://github.com/rjmacalino/precious-koala",
   },
   {
-    title: "My Hobby Blog",
-    status: "Live",
+    title: "Pomodoro Flow",
     description:
-      "A dark, neon personal site celebrating the games, anime, sitcoms and superhero universes I love. Glassmorphism cards, animated gradient orbs, scroll reveals and 3D tilt, all in pure HTML, CSS and vanilla JS.",
+      "Focus timer with a circular SVG progress ring, three switchable themes, state that survives a refresh, and background notifications via Service Worker.",
+    tags: ["React", "TypeScript", "Vite", "Service Worker"],
+    demoUrl: "https://pomodoro-flow-app.netlify.app",
+    codeUrl: "https://github.com/rjmacalino/pomodoro-v2",
+  },
+  {
+    title: "My Hobby Blog",
+    description:
+      "Dark, neon personal site with glassmorphism cards, animated gradient orbs, scroll reveals and 3D tilt, in pure HTML, CSS and vanilla JS.",
     tags: ["HTML", "CSS", "JavaScript", "IntersectionObserver"],
     demoUrl: "https://aboutmeblog.netlify.app/",
     codeUrl: "https://github.com/rjmacalino/blog",
@@ -39,68 +37,67 @@ const projects: Project[] = [
 
 export default function Projects() {
   return (
-    <section id="projects" aria-label="Projects" className="py-[5.5rem]">
-      <div className="max-w-[1100px] mx-auto px-6">
-        <h2 className="text-[clamp(1.8rem,5vw,2.6rem)] font-black tracking-[-0.01em] mb-10 relative inline-block after:content-[''] after:absolute after:left-0 after:-bottom-[10px] after:w-12 after:h-1 after:bg-text after:rounded-[3px]">
-          Projects
-        </h2>
+    <section
+      id="projects"
+      aria-labelledby="projects-heading"
+      className="flex flex-col gap-5"
+    >
+      <SectionHeading id="projects">Selected Projects</SectionHeading>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
-          {projects.map((project) => (
-            <article
-              key={project.title}
-              aria-label={`${project.title} project`}
-              className="bg-surface border border-border-base rounded-[1.25rem] p-[1.85rem] flex flex-col gap-3 transition-[border-color] duration-300 hover:border-border-hover"
-            >
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-[0.68rem] font-bold uppercase tracking-[0.08em] px-[0.7rem] py-[0.22rem] rounded-[2rem] border bg-invert-bg text-invert-text border-invert-bg">
-                  {project.status}
-                </span>
-              </div>
-
-              <h3 className="text-xl font-extrabold">{project.title}</h3>
-
-              <p className="text-[0.9rem] text-muted flex-1">
-                {project.description}
-              </p>
-
-              <ul
-                aria-label="Technologies used"
-                className="flex flex-wrap gap-[0.4rem]"
-              >
-                {project.tags.map((tag) => (
-                  <li
-                    key={tag}
-                    className="font-mono text-[0.72rem] px-[0.6rem] py-[0.2rem] bg-bg-2 text-muted rounded-[2rem] border border-border-base"
-                  >
-                    {tag}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="flex gap-[0.6rem] flex-wrap mt-1">
+      <ul className="flex flex-col gap-1">
+        {projects.map((project) => (
+          <li
+            key={project.title}
+            className="group -mx-4 rounded-[1rem] border border-transparent px-4 py-3 transition-colors duration-200 hover:border-border-base hover:bg-surface"
+          >
+            <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+              <h3 className="text-[1.02rem] font-extrabold">
                 <a
                   href={project.demoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-[1.3rem] py-2 text-[0.85rem] bg-invert-bg text-invert-text rounded-[2rem] font-bold transition-[transform,opacity] duration-150 hover:-translate-y-0.5 hover:opacity-85"
+                  className="transition-opacity hover:opacity-70"
                 >
-                  Live Demo
+                  {project.title}
+                  <span
+                    aria-hidden="true"
+                    className="ml-1.5 inline-block text-muted transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  >
+                    &#8599;
+                  </span>
                 </a>
+              </h3>
 
-                <a
-                  href={project.codeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-[1.3rem] py-2 text-[0.85rem] border-[1.5px] border-border-base text-muted rounded-[2rem] font-bold transition-[color,border-color,transform] duration-150 hover:text-text hover:border-border-hover hover:-translate-y-0.5"
+              <a
+                href={project.codeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-b border-transparent font-mono text-[0.7rem] uppercase tracking-[0.12em] text-muted transition-colors hover:border-text hover:text-text"
+              >
+                Code
+              </a>
+            </div>
+
+            <p className="mt-1.5 text-[0.88rem] leading-[1.6] text-muted">
+              {project.description}
+            </p>
+
+            <ul
+              aria-label="Technologies used"
+              className="mt-2.5 flex flex-wrap gap-[0.35rem]"
+            >
+              {project.tags.map((tag) => (
+                <li
+                  key={tag}
+                  className="rounded-[2rem] border border-border-base bg-bg-2 px-[0.6rem] py-[0.15rem] font-mono text-[0.68rem] text-muted"
                 >
-                  Code
-                </a>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }
