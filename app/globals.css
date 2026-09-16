@@ -47,13 +47,14 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
 }
 
 body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-sans-stack);
-  line-height: 1.7;
+  line-height: 1.65;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   transition: background 0.2s, color 0.2s;
